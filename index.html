@@ -4,209 +4,231 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CogniCity 2026 · Workshop</title>
+<title>CogniCity 2026 Workshop</title>
 
-<meta name="description" content="CogniCity 2026 Workshop on Cognitive and AI-Driven Smart Cities at IEEE AICCSA.">
-<meta name="keywords" content="Smart Cities, AI, IoT, CFP, IEEE, Cognitive Cities">
-<meta name="author" content="Prof. Imed Ben Dhaou">
+<meta name="description" content="CogniCity 2026 Workshop at IEEE AICCSA. AI, IoT and Smart Cities.">
+<meta name="keywords" content="Smart Cities, AI, IoT, CFP, IEEE">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --navy:#0d1f3c;
-  --navy-light:#1a3158;
-  --accent:#c8a951;
-  --white:#ffffff;
-  --muted:#5a6a82;
-  --border:#dce3ee;
+body{font-family:'Source Sans 3',sans-serif;margin:0;color:#1a2335}
+
+.top-bar{
+background:#0d1f3c;color:white;padding:10px;text-align:center;
+font-size:13px
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Source Sans 3',sans-serif;color:#1a2335;line-height:1.6}
+.top-bar a{color:#c8a951;text-decoration:none}
 
 .hero{
-  background:linear-gradient(135deg,#0d1f3c,#1a3158);
-  color:#fff;
-  text-align:center;
-  padding:80px 20px;
-  position:relative;
+background:linear-gradient(135deg,#0d1f3c,#1a3158);
+color:white;text-align:center;padding:80px 20px;
+position:relative
 }
 
-.hero::before{
-  content:'';
-  position:absolute; inset:0;
-  pointer-events:none; /* FIX CLICK */
+.hero::before{pointer-events:none}
+
+h1{
+font-family:'Playfair Display';
+font-size:50px
 }
 
-.hero h1{
-  font-family:'Playfair Display';
-  font-size:52px;
-  margin-bottom:10px;
-}
+.subtitle{max-width:600px;margin:auto;opacity:.8}
 
-.hero em{color:#c8a951; font-style:normal}
-
-.subtitle{
-  max-width:600px;
-  margin:20px auto;
-  opacity:0.85;
-}
-
-.hero-buttons{
-  margin-top:30px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-  position:relative;
-  z-index:5;
+.buttons{
+margin-top:30px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap
 }
 
 .btn{
-  padding:12px 28px;
-  border-radius:5px;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.2s;
+padding:12px 25px;border-radius:5px;text-decoration:none
 }
 
-.btn-primary{
-  background:#c8a951;
-  color:#0d1f3c;
+.primary{background:#c8a951;color:#0d1f3c;font-weight:600}
+.outline{border:1px solid white;color:white}
+
+.btn:hover{transform:translateY(-2px)}
+
+.section{max-width:1000px;margin:auto;padding:60px 20px}
+
+.tpc-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+gap:15px
 }
 
-.btn-outline{
-  border:1px solid rgba(255,255,255,0.4);
-  color:#fff;
+.tpc-item{
+border:1px solid #ccc;padding:15px;border-radius:8px;
+transition:0.2s
 }
 
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+.tpc-item:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1)
 }
 
-.section{
-  padding:60px 20px;
-  max-width:1000px;
-  margin:auto;
-}
-
-h2{
-  font-family:'Playfair Display';
-  margin-bottom:15px;
-}
-
-.topics{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-  gap:15px;
-}
-
-.topic{
-  padding:15px;
-  border:1px solid var(--border);
-  border-radius:6px;
-}
+.tpc-name{font-weight:bold;font-size:16px}
+.tpc-inst{font-size:14px;color:#555}
+.tpc-email{font-size:13px}
 
 footer{
-  text-align:center;
-  padding:40px;
-  background:#0d1f3c;
-  color:white;
+background:#0d1f3c;color:white;text-align:center;padding:30px
 }
 </style>
 </head>
 
 <body>
 
+<!-- TOP BAR -->
+<div class="top-bar">
+In conjunction with 
+<a href="https://aiccsa.net/AICCSA2026/" target="_blank">
+<strong>AICCSA 2026</strong>
+</a> · University of Sharjah · Oct 2026
+</div>
+
 <!-- HERO -->
 <div class="hero">
 
 <h1>
-International Workshop on<br>
-<em>Cognitive & AI‑Driven</em><br>
-Smart Cities
+Cognitive & AI‑Driven Smart Cities
 </h1>
 
 <p class="subtitle">
-Explore next-generation intelligent urban systems powered by agentic AI, IoT, and digital twins.
+Join CogniCity 2026 — a premier workshop on intelligent urban systems powered by AI and IoT.
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a class="btn btn-primary" href="https://easychair.org/conferences/?conf=aiccsa2026" target="_blank">
-Submit Your Paper
+<a class="btn primary" href="https://easychair.org/conferences/?conf=aiccsa2026" target="_blank">
+Submit Paper
 </a>
 
-<a class="btn btn-primary" href="Updated_AICCSA_workshop_CFP.pdf" target="_blank">
+<a class="btn primary" href="Updated_AICCSA_workshop_CFP.pdf" target="_blank">
 Download CFP
 </a>
 
-<a class="btn btn-outline" href="#overview">
-Learn More
+<a class="btn outline" href="#tpc">
+Committee
 </a>
 
 </div>
 
-<div id="countdown" style="margin-top:20px;font-weight:600;"></div>
+<!-- COUNTDOWN -->
+<div id="countdown" style="margin-top:20px;font-weight:600;color:#ffd166"></div>
+
+<!-- QR CODE -->
+<div style="margin-top:25px;">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://imedbendhaou.github.io/cognicity-2026/" alt="QR Code">
+<p style="font-size:12px;">Scan to access CFP</p>
+</div>
 
 </div>
 
 <!-- OVERVIEW -->
-<div class="section" id="overview">
-<h2>About the Workshop</h2>
+<div class="section">
+<h2>About</h2>
 <p>
-CogniCity 2026 explores how AI-driven systems transform cities into resilient, intelligent ecosystems.
+CogniCity explores how AI transforms cities into resilient, intelligent ecosystems.
 </p>
 </div>
 
-<!-- TOPICS -->
-<div class="section">
-<h2>Topics</h2>
+<!-- TPC -->
+<div class="section" id="tpc">
 
-<div class="topics">
-<div class="topic">Agentic AI</div>
-<div class="topic">IoT & Edge AI</div>
-<div class="topic">Digital Twins</div>
-<div class="topic">Smart Mobility</div>
-<div class="topic">Urban Analytics</div>
-<div class="topic">Security & Privacy</div>
+<h2>Technical Program Committee</h2>
+
+<div class="tpc-grid">
+
+<div class="tpc-item">
+<div class="tpc-name">Olfa Kanoun</div>
+<div class="tpc-inst">TU Chemnitz, Germany</div>
 </div>
 
+<div class="tpc-item">
+<div class="tpc-name">Tuan Nguyen Gia</div>
+<div class="tpc-inst">Metropolia, Finland</div>
+</div>
+
+<div class="tpc-item">
+<div class="tpc-name">Yassine Amirat</div>
+<div class="tpc-inst">Yncréa West, France</div>
+</div>
+
+<div class="tpc-item">
+<div class="tpc-name">Haithem Afli</div>
+<div class="tpc-inst">Munster TU, Ireland</div>
+</div>
+
+<div class="tpc-item">
+<div class="tpc-name">Mourad Mars</div>
+<div class="tpc-inst">Umm Al-Qura Univ</div>
+</div>
+
+<div class="tpc-item">
+<div class="tpc-name">Fethi Bougares</div>
+<div class="tpc-inst">Elyadata, France</div>
+</div>
+
+<div class="tpc-item">
+<div class="tpc-name">Muhammad Shahid Anwar</div>
+<div class="tpc-inst">KFUPM</div>
+</div>
+
+<div class="tpc-item">
+<div class="tpc-name">Sadique Ahmad</div>
+<div class="tpc-inst">Prince Sultan Univ</div>
+</div>
+
+<div class="tpc-item">
+<div class="tpc-name">Marouene Chaieb</div>
+<div class="tpc-inst">University of Manouba</div>
+</div>
+
+<div class="tpc-item">
+<div class="tpc-name">Saoucene Mahfoudh</div>
+<div class="tpc-inst">Dar Al-Hekma Univ</div>
+</div>
+
+</div>
 </div>
 
 <!-- CTA -->
-<div class="section" style="text-align:center;">
-<h2>Ready to contribute?</h2>
+<div class="section" style="text-align:center">
+<h2>Submit Your Work</h2>
 
-<br>
-
-<a class="btn btn-primary" href="https://easychair.org/conferences/?conf=aiccsa2026" target="_blank">
-Submit Your Paper
+<a class="btn primary" href="https://easychair.org/conferences/?conf=aiccsa2026" target="_blank">
+Submit Now
 </a>
+
 </div>
 
 <!-- FOOTER -->
 <footer>
-<p>© CogniCity 2026 · IEEE AICCSA Workshop</p>
+© CogniCity 2026 · 
+<a href="https://aiccsa.net/AICCSA2026/" style="color:#c8a951" target="_blank">
+AICCSA 2026
+</a>
 </footer>
 
 <!-- COUNTDOWN SCRIPT -->
 <script>
-const deadline=new Date("2026-06-15").getTime();
+const deadline=new Date("2026-06-15T23:59:59").getTime();
 
 setInterval(()=>{
 let now=new Date().getTime();
 let diff=deadline-now;
 
-if(diff<0){
+if(diff<=0){
 document.getElementById("countdown").innerHTML="Submission Closed";
 return;
 }
 
-let days=Math.floor(diff/(1000*60*60*24));
-document.getElementById("countdown").innerHTML="⏳ Deadline in "+days+" days";
+let d=Math.floor(diff/(1000*60*60*24));
+let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("countdown").innerHTML=
+"⏳ Deadline in "+d+" days "+h+" hours";
 
 },1000);
 </script>
