@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CogniCity 2026 Workshop</title>
+<meta name="description" content="CogniCity 2026 Workshop at IEEE AICCSA. AI, IoT and Smart Cities.">
+<meta name="keywords" content="Smart Cities, AI, IoT, CFP, IEEE">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1f3c;
+    --navy-mid: #1a3158;
+    --gold: #c8a951;
+    --gold-light: #e0c06a;
+    --white: #ffffff;
+    --text: #1a2335;
+    --muted: #5a6880;
+    --border: #dde3ee;
+    --bg-light: #f4f7fc;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.65;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--navy);
+    color: rgba(255,255,255,.75);
+    text-align: center;
+    padding: 9px 20px;
+    font-size: 12.5px;
+    letter-spacing: .04em;
+  }
+  .top-bar a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 12px rgba(13,31,60,.07);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-brand-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: -.5px;
+  }
+  .nav-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background .2s, color .2s;
+  }
+  .nav-links a:hover { background: var(--bg-light); color: var(--navy); }
+  .nav-links .btn-nav {
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 4px;
+    padding: 7px 16px;
+  }
+  .nav-links .btn-nav:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e4080 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 90px 20px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(200,169,81,.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(200,169,81,.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(200,169,81,.2);
+    border: 1px solid rgba(200,169,81,.5);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 780px;
+    margin: 0 auto 12px;
+    letter-spacing: -.01em;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    max-width: 580px;
+    margin: 0 auto 10px;
+    color: rgba(255,255,255,.72);
+    font-size: 17px;
+    font-weight: 300;
+  }
+  .hero-meta {
+    color: rgba(255,255,255,.5);
+    font-size: 13px;
+    margin-bottom: 32px;
+    letter-spacing: .05em;
+  }
+  .hero-meta span { color: var(--gold); font-weight: 600; }
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-outline { border: 1.5px solid rgba(255,255,255,.4); color: var(--white); background: transparent; }
+  .btn-outline:hover { background: rgba(255,255,255,.08); }
+
+  #countdown {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 22px;
+  }
+
+  /* ── SECTIONS ── */
+  .section { max-width: 1080px; margin: 0 auto; padding: 64px 20px; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .section-rule {
+    width: 48px;
+    height: 3px;
+    background: var(--gold);
+    margin-bottom: 28px;
+    border-radius: 2px;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  @media(max-width:680px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text p { color: var(--muted); margin-bottom: 14px; font-size: 15.5px; }
+
+  /* ── KEY DATES ── */
+  .dates-bg { background: var(--bg-light); }
+  .dates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .date-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    border-left: 4px solid var(--gold);
+  }
+  .date-label { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; margin-bottom: 4px; }
+  .date-value { font-size: 17px; font-weight: 700; color: var(--navy); }
+
+  /* ── TOPICS ── */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .topic-item {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .topic-item::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── ORGANIZING COMMITTEE ── */
+  .org-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .org-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    position: relative;
+    transition: box-shadow .2s, transform .2s;
+  }
+  .org-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(13,31,60,.1); }
+  .org-role {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .org-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+  .org-inst { font-size: 13px; color: var(--muted); }
+
+  /* ── TPC ── */
+  .tpc-section-bg { background: var(--bg-light); }
+  .tpc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .tpc-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 15px 18px;
+    transition: transform .2s, box-shadow .2s;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .tpc-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,31,60,.1); }
+  .tpc-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    letter-spacing: -.5px;
+  }
+  .tpc-info { min-width: 0; }
+  .tpc-name { font-weight: 700; font-size: 14.5px; color: var(--navy); line-height: 1.2; }
+  .tpc-inst { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
+  /* ── SUBMISSION ── */
+  .sub-box {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .sub-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(200,169,81,.15), transparent 60%);
+    pointer-events: none;
+  }
+  .sub-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .sub-box p { color: rgba(255,255,255,.65); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .sub-details {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .sub-detail-item { text-align: center; }
+  .sub-detail-label { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.45); margin-bottom: 4px; }
+  .sub-detail-value { font-size: 15px; font-weight: 700; color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,.55);
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 13px;
+  }
+  footer .footer-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* divider */
+  .section-divider { border: none; border-top: 1px solid var(--border); }
+
+  /* QR */
+  .qr-wrap { margin-top: 20px; }
+  .qr-wrap img { border-radius: 6px; }
+  .qr-wrap p { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  In conjunction with <a href="https://aiccsa.net/AICCSA2026/" target="_blank">AICCSA 2026</a> &nbsp;·&nbsp; University of Sharjah, UAE &nbsp;·&nbsp; 26–29 October 2026
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">
+      <div class="nav-brand-icon">CC</div>
+      <span class="nav-brand-name">CogniCity 2026</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#topics">Topics</a></li>
+      <li><a href="#dates">Dates</a></li>
+      <li><a href="#committee">Committee</a></li>
+      <li><a href="#tpc">TPC</a></li>
+      <li><a href="https://easychair.org/conferences/?conf=aiccsa2026" target="_blank" class="btn-nav">Submit Paper</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">IEEE AICCSA 2026 Workshop</div>
+  <h1>Cognitive &amp; <em>AI‑Driven</em><br>Smart Cities</h1>
+  <p class="hero-sub">Join CogniCity 2026 — a premier workshop on intelligent urban systems powered by agentic AI, digital twins, and edge intelligence.</p>
+  <p class="hero-meta">University of Sharjah, UAE &nbsp;·&nbsp; <span>26–29 October 2026</span></p>
+  <div id="countdown"></div>
+  <div class="hero-btns">
+    <a class="btn btn-primary" href="https://easychair.org/conferences/?conf=aiccsa2026" target="_blank">Submit Paper</a>
+    <a class="btn btn-primary" href="Updated_AICCSA_workshop_CFP.pdf" target="_blank">Download CFP</a>
+    <a class="btn btn-outline" href="#committee">View Committee</a>
+  </div>
+  <div class="qr-wrap">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https://imedbendhaou.github.io/cognicity-2026/" alt="QR Code">
+    <p>Scan to access CFP</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="section-title">About CogniCity 2026</div>
+  <div class="section-rule"></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>As urban populations grow and city infrastructures become increasingly complex, <strong>cognitive cities</strong> are emerging as the next frontier of urban intelligence — environments where agentic AI systems autonomously perceive, reason, and act to optimize city operations in real time.</p>
+      <p>CogniCity 2026 brings together researchers, practitioners, and policymakers to explore how agentic AI, underpinned by digital twins, edge intelligence, and trustworthy autonomous systems, is transforming urban environments.</p>
+    </div>
+    <div class="about-text">
+      <p>The workshop targets self-managing, resilient, and human-centred urban ecosystems — capable of anticipating disruptions, coordinating multi-domain responses, and continuously adapting to the evolving needs of their citizens.</p>
+      <p>All accepted and presented papers will be submitted for inclusion in <strong>IEEE Xplore</strong> through AICCSA 2026 proceedings.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- KEY DATES -->
+<div class="dates-bg" id="dates">
+  <div class="section">
+    <div class="section-title">Important Dates</div>
+    <div class="section-rule"></div>
+    <div class="dates-grid">
+      <div class="date-card">
+        <div class="date-label">Paper Submission</div>
+        <div class="date-value">June 15, 2026</div>
+      </div>
+      <div class="date-card">
+        <div class="date-label">Author Notification</div>
+        <div class="date-value">August 5, 2026</div>
+      </div>
+      <div class="date-card">
+        <div class="date-label">Camera-Ready</div>
+        <div class="date-value">September 5, 2026</div>
+      </div>
+      <div class="date-card">
+        <div class="date-label">Author Registration</div>
+        <div class="date-value">September 5, 2026</div>
+      </div>
+      <div class="date-card">
+        <div class="date-label">Workshop Dates</div>
+        <div class="date-value">Oct 26–29, 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPICS -->
+<div class="section" id="topics">
+  <div class="section-title">Topics of Interest</div>
+  <div class="section-rule"></div>
+  <div class="topics-grid">
+    <div class="topic-item">Agentic AI for Cognitive Cities</div>
+    <div class="topic-item">Smart Sensors &amp; Wireless Sensor Networks</div>
+    <div class="topic-item">Cognitive and Autonomous Urban Systems</div>
+    <div class="topic-item">Self-Healing &amp; Resilient Cognitive Urban Systems</div>
+    <div class="topic-item">Urban Data Analytics &amp; Real-Time Decision-Making</div>
+    <div class="topic-item">IoT and Edge AI for Urban Environments</div>
+    <div class="topic-item">Digital Twins for Urban Modeling &amp; Simulation</div>
+    <div class="topic-item">Smart Mobility &amp; Intelligent Transportation Systems</div>
+    <div class="topic-item">Security, Privacy, and Federated Learning</div>
+    <div class="topic-item">Human-Centred AI, Ethics, and Governance</div>
+    <div class="topic-item">AI-Driven Disaster Management &amp; Emergency Response</div>
+    <div class="topic-item">Industry 4.0 &amp; Cyber-Physical Systems for Smart Urban Economies</div>
+    <div class="topic-item">Urban Logistics &amp; Intelligent Supply Networks</div>
+    <div class="topic-item">Explainable AI (XAI)</div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ORGANIZING COMMITTEE -->
+<div class="section" id="committee">
+  <div class="section-title">Organizing Committee</div>
+  <div class="section-rule"></div>
+  <div class="org-grid">
+    <div class="org-card">
+      <div class="org-role">General Chair</div>
+      <div class="org-name">Imed Ben Dhaou</div>
+      <div class="org-inst">Dar Al-Hekma University, Saudi Arabia</div>
+    </div>
+    <div class="org-card">
+      <div class="org-role">Program Chair</div>
+      <div class="org-name">Passent Elkafrawy</div>
+      <div class="org-inst">Effat University, Saudi Arabia</div>
+    </div>
+    <div class="org-card">
+      <div class="org-role">Co-Chair</div>
+      <div class="org-name">Najib Ben Aoun</div>
+      <div class="org-inst">Al-Baha University, Saudi Arabia</div>
+    </div>
+    <div class="org-card">
+      <div class="org-role">Publication Chair</div>
+      <div class="org-name">Oumaima Guedhami</div>
+      <div class="org-inst">Effat University, Saudi Arabia</div>
+    </div>
+  </div>
+</div>
+
+<!-- TPC -->
+<div class="tpc-section-bg" id="tpc">
+  <div class="section">
+    <div class="section-title">Technical Program Committee</div>
+    <div class="section-rule"></div>
+    <div class="tpc-grid">
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">OK</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Olfa Kanoun</div>
+          <div class="tpc-inst">Technische Universität Chemnitz, Germany</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">TG</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Tuan Nguyen Gia</div>
+          <div class="tpc-inst">Metropolia University of Applied Sciences, Finland</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">YA</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Yassine Amirat</div>
+          <div class="tpc-inst">Yncréa West, France</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">HA</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Haithem Afli</div>
+          <div class="tpc-inst">ADAPT Centre, Munster Technological University, Ireland</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">MM</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Mourad Mars</div>
+          <div class="tpc-inst">Umm Al-Qura University, Saudi Arabia</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">FB</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Fethi Bougares</div>
+          <div class="tpc-inst">Elyadata, France</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">SM</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Saoucene Mahfoudh</div>
+          <div class="tpc-inst">Dar Al-Hekma University, Saudi Arabia</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">MA</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Muhammad Shahid Anwar</div>
+          <div class="tpc-inst">King Fahd University of Petroleum and Minerals, Saudi Arabia</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">SA</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Sadique Ahmad</div>
+          <div class="tpc-inst">Prince Sultan University, Saudi Arabia</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">MC</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Marouene Chaieb</div>
+          <div class="tpc-inst">University of Manouba, Tunisia</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">AA</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Ahmed Ahmim</div>
+          <div class="tpc-inst">University of Souk Ahras, Algeria</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">SN</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Sarra Namane</div>
+          <div class="tpc-inst">Badji Mokhtar University, Algeria</div>
+        </div>
+      </div>
+
+      <div class="tpc-item">
+        <div class="tpc-avatar">HK</div>
+        <div class="tpc-info">
+          <div class="tpc-name">Hemachandran Kannan</div>
+          <div class="tpc-inst">AI Research Centre, Woxsen School of Business, India</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SUBMISSION CTA -->
+<div class="section">
+  <div class="sub-box">
+    <h2>Submit Your Research</h2>
+    <p>We welcome original, unpublished papers in IEEE two-column format. Double-blind review process via EasyChair.</p>
+    <div class="sub-details">
+      <div class="sub-detail-item">
+        <div class="sub-detail-label">Paper Length</div>
+        <div class="sub-detail-value">Up to 6 pages</div>
+      </div>
+      <div class="sub-detail-item">
+        <div class="sub-detail-label">Format</div>
+        <div class="sub-detail-value">IEEE Two-Column</div>
+      </div>
+      <div class="sub-detail-item">
+        <div class="sub-detail-label">Review</div>
+        <div class="sub-detail-value">Double-Blind</div>
+      </div>
+      <div class="sub-detail-item">
+        <div class="sub-detail-label">Deadline</div>
+        <div class="sub-detail-value">June 15, 2026</div>
+      </div>
+    </div>
+    <a class="btn btn-primary" href="https://easychair.org/conferences/?conf=aiccsa2026" target="_blank">Submit via EasyChair →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">CogniCity 2026</div>
+  <p>International Workshop on Cognitive and AI-Driven Smart Cities</p>
+  <p style="margin-top:8px;">
+    In conjunction with <a href="https://aiccsa.net/AICCSA2026/" target="_blank">AICCSA 2026</a> &nbsp;·&nbsp;
+    Contact: <a href="mailto:ibendhaou@dah.edu.sa">ibendhaou@dah.edu.sa</a>
+  </p>
+  <p style="margin-top:16px;font-size:12px;">&copy; CogniCity 2026 · University of Sharjah, UAE</p>
+</footer>
+
+<!-- COUNTDOWN -->
+<script>
+const deadline = new Date("2026-06-15T23:59:59").getTime();
+function tick() {
+  const now = Date.now();
+  const diff = deadline - now;
+  const el = document.getElementById("countdown");
+  if (diff <= 0) { el.textContent = "⚠ Submission Deadline Passed"; return; }
+  const d = Math.floor(diff / 864e5);
+  const h = Math.floor((diff % 864e5) / 36e5);
+  const m = Math.floor((diff % 36e5) / 6e4);
+  el.textContent = `⏳ Submission closes in ${d}d ${h}h ${m}m`;
+}
+tick();
+setInterval(tick, 30000);
+</script>
+
+</body>
+</html>
